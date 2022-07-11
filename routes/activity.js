@@ -109,7 +109,7 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: "+from);
     console.log("Executedbody: "+body);    
 
-    function UserAction() {
+   // function UserAction() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
@@ -119,7 +119,7 @@ exports.execute = function (req, res) {
         xhttp.open("POST", "Your Rest URL Here", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send("Your JSON Data Here");
-    }
+   // }
 
 
 //     const userAction = async () => {
