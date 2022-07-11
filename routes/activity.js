@@ -112,24 +112,23 @@ exports.execute = function (req, res) {
     console.log("check for whatsapp data for the part of the integration");
 
 
-    const userAction = async () => {
-        console.log("check for of the integration");
-        // const response = await fetch('http://example.com/movies.json', {
-        //   method: 'POST',
-        //   body: myBody, // string or object
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   }
-        // });
-        // const myJson = await response.json(); //extract JSON from the http response
-        // do something with myJson
-      }
+//     const userAction = async () => {
+//   const response = await fetch('http://example.com/movies.json', {
+//     method: 'POST',
+//     body: myBody, // string or object
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   });
+//   const myJson = await response.json(); //extract JSON from the http response
+//   // do something with myJson
+// }
 
-    // const client = require('twilio')(accountSid, authToken);
-    //    client.messages
-    //    .create({body: body, from: '+12562903890', to: to, messagingService: from})
-    //    .then(message => console.log(message.sid))
-    //    .done();
+    const client = require('twilio')(accountSid, authToken);
+       client.messages
+       .create({body: body, from: '+12562903890', to: to, messagingService: from})
+       .then(message => console.log(message.sid))
+       .done();
     
 //     // const accountSid = requestBody.accountSid;
 //     // const authToken = requestBody.authToken;
