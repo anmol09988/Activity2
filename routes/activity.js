@@ -109,7 +109,17 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: "+from);
     console.log("Executedbody: "+body);    
 
-    console.log("check for whatsapp data for the part of the integration");
+    function UserAction() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 alert(this.responseText);
+             }
+        };
+        xhttp.open("POST", "Your Rest URL Here", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send("Your JSON Data Here");
+    }
 
 
 //     const userAction = async () => {
@@ -124,11 +134,11 @@ exports.execute = function (req, res) {
 //   // do something with myJson
 // }
 
-    const client = require('twilio')(accountSid, authToken);
-       client.messages
-       .create({body: body, from: '+12562903890', to: to, messagingService: from})
-       .then(message => console.log(message.sid))
-       .done();
+    // const client = require('twilio')(accountSid, authToken);
+    //    client.messages
+    //    .create({body: body, from: '+12562903890', to: to, messagingService: from})
+    //    .then(message => console.log(message.sid))
+    //    .done();
     
 //     // const accountSid = requestBody.accountSid;
 //     // const authToken = requestBody.authToken;
