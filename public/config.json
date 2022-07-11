@@ -1,26 +1,26 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-       "icon": "images/iconSmall.png",
-       "category": "message"
+        "icon": "images/iconSmall.png",
+        "category": "message"
     },
     "type": "REST",
     "lang": {
-       "en-US": {
-           "name": "SMS CA SFMC",
-           "description": "Send Twilio SMS with Journey Builder",
-           "TwilioMessage":"test"
-       }
+        "en-US": {
+            "name": "Whatsapp CA SFMC",
+            "description": "Send Whatsapps Message with Journey Builder",
+            "TwilioMessage": "test"
+        }
     },
     "arguments": {
         "execute": {
             "inArguments": [
                 {
-                  "to": "{{Event.DEAudience-0a845042-fe54-8ac9-88a5-b9947cda7676.PhoneNo}}" 
-                }               
+                    "to": "{{Event.DEAudience-0a845042-fe54-8ac9-88a5-b9947cda7676.PhoneNo}}"
+                }
             ],
             "outArguments": [],
-            "url": "https://smstwilioca.herokuapp.com/check/execute",
+            "url": "https://whatsappcasfmc.herokuapp.com/check/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -29,49 +29,52 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "e7994b9c-0785-4378-8748-f4f4f8a68ba0",
-       "save": {
-           "url": "https://smstwilioca.herokuapp.com/check/save",
+        "applicationExtensionKey": "e7994b9c-0785-4378-8748-f4f4f8a68ba0",
+        "save": {
+            "url": "https://whatsappcasfmc.herokuapp.com/check/save",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "publish": {
-           "url": "https://smstwilioca.herokuapp.com/check/publish",
+        },
+        "publish": {
+            "url": "https://whatsappcasfmc.herokuapp.com/check/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "validate": {
-           "url": "https://smstwilioca.herokuapp.com/check/validate",
+        },
+        "validate": {
+            "url": "https://whatsappcasfmc.herokuapp.com/check/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "stop": {
-           "url": "https://smstwilioca.herokuapp.com/check/stop",
+        },
+        "stop": {
+            "url": "https://whatsappcasfmc.herokuapp.com/check/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       }
+        }
     },
     "wizardSteps": [
-       { "label": "Create SMS Message", "key": "step1" }
+        {
+            "label": "Create SMS Message",
+            "key": "step1"
+        }
     ],
     "userInterfaces": {
-       "configModal": {
-           "height": 600,
-           "width": 800,
-           "fullscreen": false
-       }
+        "configModal": {
+            "height": 600,
+            "width": 800,
+            "fullscreen": false
+        }
     },
     "schema": {
         "arguments": {
@@ -81,37 +84,37 @@
                         "accountSid": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "from": {
                             "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
                     },
                     {
                         "body": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "email": {
                             "dataType": "Email",
