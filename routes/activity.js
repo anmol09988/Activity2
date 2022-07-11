@@ -109,41 +109,21 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
 
-    const https = require('https');
-    const options = {
-        hostname: 'jsonplaceholder.typicode.com',
-        port: 443,
-        path: '/todos',
-        method: 'GET',
-    };
-
-    const req = https.request(options, res => {
-        console.log(`statusCode: ${res.statusCode}`);
-
-        res.on('data', d => {
-            process.stdout.write(d);
-        });
-    });
-
-    req.on('error', error => {
-        console.error(error);
-    });
-
     // function UserAction() {
-    // var xhttp = new XMLHttpRequest();
-    // console.log("ExecutedaccountSidwwww: ");
-    // xhttp.onreadystatechange = function() 
-    // {  console.log("Executedaccountwssssssssssss:");
-    //      if (this.readyState == 4 && this.status == 200) 
-    //      {
-    //         console.log("Executedaccountwsssssssssssdaads:");
-    //          alert(this.responseText);
-    //      }
-    // };
-    // xhttp.open("POST", "Your Rest URL Here", true);
-    // xhttp.setRequestHeader("Content-type", "application/json");
-    // xhttp.send("Your JSON Data Here");
-    // console.log("Executedaccountwsssssssssssdadas:");
+    var xhttp = new XMLHttpRequest();
+    console.log("ExecutedaccountSidwwww: ");
+    xhttp.onreadystatechange = function() 
+    {  console.log("Executedaccountwssssssssssss:");
+         if (this.readyState == 4 && this.status == 200) 
+         {
+            console.log("Executedaccountwsssssssssssdaads:");
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("POST", "Your Rest URL Here", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send("Your JSON Data Here");
+    console.log("Executedaccountwsssssssssssdadas:");
     // }
 
 
