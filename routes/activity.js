@@ -93,7 +93,7 @@ exports.execute = function (req, res) {
     console.log("3");
     console.log("2");
     console.log("1");
-    
+
 
     var requestBody = req.body.inArguments[0];
 
@@ -101,66 +101,86 @@ exports.execute = function (req, res) {
     const authToken = requestBody.authToken;
     const to = requestBody.to;
     const from = requestBody.messagingService;
-    const body = requestBody.body;   
-    console.log("requestBody: "+requestBody);
-    console.log("ExecutedaccountSid: "+accountSid);
-    console.log("ExecutedauthToken: "+authToken);
-    console.log("Executedto: "+to);
-    console.log("Executedfrom: "+from);
-    console.log("Executedbody: "+body);    
+    const body = requestBody.body;
+    console.log("requestBody: " + requestBody);
+    console.log("ExecutedaccountSid: " + accountSid);
+    console.log("ExecutedauthToken: " + authToken);
+    console.log("Executedto: " + to);
+    console.log("Executedfrom: " + from);
+    console.log("Executedbody: " + body);
 
-   // function UserAction() {
-        var xhttp = new XMLHttpRequest();
-        console.log("ExecutedaccountSidwwww: ");
-        xhttp.onreadystatechange = function() 
-        {  console.log("Executedaccountwssssssssssss:");
-             if (this.readyState == 4 && this.status == 200) 
-             {
-                console.log("Executedaccountwsssssssssssdaads:");
-                 alert(this.responseText);
-             }
-        };
-        xhttp.open("POST", "Your Rest URL Here", true);
-        xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.send("Your JSON Data Here");
-        console.log("Executedaccountwsssssssssssdadas:");
-   // }
+    const https = require('https');
+    const options = {
+        hostname: 'jsonplaceholder.typicode.com',
+        port: 443,
+        path: '/todos',
+        method: 'GET',
+    };
+
+    const req = https.request(options, res => {
+        console.log(`statusCode: ${res.statusCode}`);
+
+        res.on('data', d => {
+            process.stdout.write(d);
+        });
+    });
+
+    req.on('error', error => {
+        console.error(error);
+    });
+
+    // function UserAction() {
+    // var xhttp = new XMLHttpRequest();
+    // console.log("ExecutedaccountSidwwww: ");
+    // xhttp.onreadystatechange = function() 
+    // {  console.log("Executedaccountwssssssssssss:");
+    //      if (this.readyState == 4 && this.status == 200) 
+    //      {
+    //         console.log("Executedaccountwsssssssssssdaads:");
+    //          alert(this.responseText);
+    //      }
+    // };
+    // xhttp.open("POST", "Your Rest URL Here", true);
+    // xhttp.setRequestHeader("Content-type", "application/json");
+    // xhttp.send("Your JSON Data Here");
+    // console.log("Executedaccountwsssssssssssdadas:");
+    // }
 
 
-//     const userAction = async () => {
-//   const response = await fetch('http://example.com/movies.json', {
-//     method: 'POST',
-//     body: myBody, // string or object
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-//   const myJson = await response.json(); //extract JSON from the http response
-//   // do something with myJson
-// }
+    //     const userAction = async () => {
+    //   const response = await fetch('http://example.com/movies.json', {
+    //     method: 'POST',
+    //     body: myBody, // string or object
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   });
+    //   const myJson = await response.json(); //extract JSON from the http response
+    //   // do something with myJson
+    // }
 
     // const client = require('twilio')(accountSid, authToken);
     //    client.messages
     //    .create({body: body, from: '+12562903890', to: to, messagingService: from})
     //    .then(message => console.log(message.sid))
     //    .done();
-    
-//     // const accountSid = requestBody.accountSid;
-//     // const authToken = requestBody.authToken;
-//      const client = require('twilio')(accountSid, authToken);
 
-//     client.messages
-//           .create({
-//                  from: 'whatsapp:+14155238886',
-//                  body: 'Hello, there!',
-//                  to: 'whatsapp:+919294641435'
-//                    })
-//                  .then(message => console.log(message.sid));
+    //     // const accountSid = requestBody.accountSid;
+    //     // const authToken = requestBody.authToken;
+    //      const client = require('twilio')(accountSid, authToken);
 
-//     client.messages
-//         .create({body: 'hiiii', from: '+12562903890', to:'+919294641435', messagingService: 'MG802cbf02ab002f689462d6ebe8fd5f9b'})
-//         .then(message => console.log(message.sid))
-//         .done();
+    //     client.messages
+    //           .create({
+    //                  from: 'whatsapp:+14155238886',
+    //                  body: 'Hello, there!',
+    //                  to: 'whatsapp:+919294641435'
+    //                    })
+    //                  .then(message => console.log(message.sid));
+
+    //     client.messages
+    //         .create({body: 'hiiii', from: '+12562903890', to:'+919294641435', messagingService: 'MG802cbf02ab002f689462d6ebe8fd5f9b'})
+    //         .then(message => console.log(message.sid))
+    //         .done();
 
     // FOR TESTING
     logData(req);
