@@ -109,6 +109,8 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: "+from);
     console.log("Executedbody: "+body);    
 
+    console.log("check for whatsapp data for the part of the integration");
+
     const client = require('twilio')(accountSid, authToken);
        client.messages
        .create({body: body, from: '+12562903890', to: to, messagingService: from})
