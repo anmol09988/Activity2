@@ -97,8 +97,8 @@ exports.execute = function (req, res) {
 
     var requestBody = req.body.inArguments[0];
 
-   const accountSid = requestBody.accountSid;
-   const authToken = requestBody.authToken;
+//    const accountSid = requestBody.accountSid;
+//    const authToken = requestBody.authToken;
     const to = requestBody.to;
     const from = requestBody.messagingService;
     const body = requestBody.body;
@@ -109,27 +109,27 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
     
-//     const accountSid = 'AC0fb76e4aa1281a5da1a11f54e651f8aa'; 
-//     const authToken = '79b2e10c1d15db99628a871577481bd3'; 
+     const accountSid = 'AC0fb76e4aa1281a5da1a11f54e651f8aa'; 
+     const authToken = '79b2e10c1d15db99628a871577481bd3'; 
     
-//      console.log("ExecutedaccountSid: " + accountSid);
-//      console.log("ExecutedauthToken: " + authToken);
+     console.log("ExecutedaccountSid: " + accountSid);
+     console.log("ExecutedauthToken: " + authToken);
 
-//     const client = require('twilio')(accountSid, authToken); 
-//     client.messages 
-//       .create({ 
-//          body: 'hiiiii', 
-//          from: 'whatsapp:+14155238886',       
-//          to: 'whatsapp:+919294641435' 
-//        }) 
-//       .then(message => console.log(message.sid)) 
-//       .done();
+    const client = require('twilio')(accountSid, authToken); 
+    client.messages 
+      .create({ 
+         body: 'hiiiii', 
+         from: 'whatsapp:+14155238886',       
+         to: 'whatsapp:+919294641435' 
+       }) 
+      .then(message => console.log(message.sid)) 
+      .done();
     
-     const client = require('twilio')(accountSid, authToken);
-        client.messages
-        .create({body: body, from: '+12562903890', to: to, messagingService: from})
-        .then(message => console.log(message.sid))
-        .done();
+//      const client = require('twilio')(accountSid, authToken);
+//         client.messages
+//         .create({body: body, from: '+12562903890', to: to, messagingService: from})
+//         .then(message => console.log(message.sid))
+//         .done();
     
 //    const axios = require('axios');
 
