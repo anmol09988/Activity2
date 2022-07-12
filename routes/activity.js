@@ -109,6 +109,12 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
     
+     const client = require('twilio')(accountSid, authToken);
+        client.messages
+        .create({body: body, from: '+12562903890', to: to, messagingService: from})
+        .then(message => console.log(message.sid))
+        .done();
+    
    const axios = require('axios');
 
     axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
