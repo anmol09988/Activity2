@@ -109,21 +109,30 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
 
+
+    const request = require('request');
+
+    request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body.url);
+  console.log(body.explanation);
+    });
+
     // function UserAction() {
-    var xhttp = new XMLHttpRequest();
-    console.log("ExecutedaccountSidwwww: ");
-    xhttp.onreadystatechange = function() 
-    {  console.log("Executedaccountwssssssssssss:");
-         if (this.readyState == 4 && this.status == 200) 
-         {
-            console.log("Executedaccountwsssssssssssdaads:");
-             alert(this.responseText);
-         }
-    };
-    xhttp.open("POST", "Your Rest URL Here", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send("Your JSON Data Here");
-    console.log("Executedaccountwsssssssssssdadas:");
+    // var xhttp = new XMLHttpRequest();
+    // console.log("ExecutedaccountSidwwww: ");
+    // xhttp.onreadystatechange = function() 
+    // {  console.log("Executedaccountwssssssssssss:");
+    //      if (this.readyState == 4 && this.status == 200) 
+    //      {
+    //         console.log("Executedaccountwsssssssssssdaads:");
+    //          alert(this.responseText);
+    //      }
+    // };
+    // xhttp.open("POST", "Your Rest URL Here", true);
+    // xhttp.setRequestHeader("Content-type", "application/json");
+    // xhttp.send("Your JSON Data Here");
+    // console.log("Executedaccountwsssssssssssdadas:");
     // }
 
 
