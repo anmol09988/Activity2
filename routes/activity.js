@@ -108,15 +108,32 @@ exports.execute = function (req, res) {
     console.log("Executedto: " + to);
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
+    
+   const axios = require('axios');
+
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    .then(response => {
+    console.log(response.data.url);
+    console.log(response.data.explanation);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+// logs:
+// => {login: "mapbox", id: 600935, node_id: "MDEyOk9yZ2FuaXphdGlvbjYwMDkzNQ==", avatar_url: "https://avatars1.githubusercontent.com/u/600935?v=4", gravatar_id: "", …}
+// => 200
+// => OK
+// => {x-ratelimit-limit: "60", x-github-media-type: "github.v3", x-ratelimit-remaining: "60", last-modified: "Wed, 01 Aug 2018 02:50:03 GMT", etag: "W/"3062389570cc468e0b474db27046e8c9"", …}
+// => {adapter: ƒ, transformRequest: {…}, transformResponse: {…}, timeout: 0, xsrfCookieName: "XSRF-TOKEN", …}
 
 
-    const request = require('request');
+//     const request = require('request');
 
-    request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
-  if (err) { return console.log(err); }
-  console.log(body.url);
-  console.log(body.explanation);
-    });
+//     request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
+//   if (err) { return console.log(err); }
+//   console.log(body.url);
+//   console.log(body.explanation);
+//     });
 
     // function UserAction() {
     // var xhttp = new XMLHttpRequest();
