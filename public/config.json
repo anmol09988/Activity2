@@ -29,7 +29,7 @@
         }
     },
     "configurationArguments": {
-        "applicationExtensionKey": "e7994b9c-0785-4378-8748-f4f4f8a68ba0",
+        "applicationExtensionKey": "772e58b7-00dd-4cf3-b63a-e4df00e95d7c",
         "save": {
             "url": "https://whatsappcasfmc.herokuapp.com/check/save",
             "verb": "POST",
