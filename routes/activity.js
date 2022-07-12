@@ -99,21 +99,24 @@ exports.execute = function (req, res) {
 
    // const accountSid = requestBody.accountSid;
    // const authToken = requestBody.authToken;
-    const to = requestBody.to;
-    const from = requestBody.messagingService;
-    const body = requestBody.body;
-    console.log("requestBody: " + requestBody);
-    console.log("ExecutedaccountSid: " + accountSid);
-    console.log("ExecutedauthToken: " + authToken);
-    console.log("Executedto: " + to);
-    console.log("Executedfrom: " + from);
-    console.log("Executedbody: " + body);
+//     const to = requestBody.to;
+//     const from = requestBody.messagingService;
+//     const body = requestBody.body;
+//     console.log("requestBody: " + requestBody);
+//     console.log("ExecutedaccountSid: " + accountSid);
+//     console.log("ExecutedauthToken: " + authToken);
+//     console.log("Executedto: " + to);
+//     console.log("Executedfrom: " + from);
+//     console.log("Executedbody: " + body);
     
     const accountSid = 'AC0fb76e4aa1281a5da1a11f54e651f8aa'; 
     const authToken = '79b2e10c1d15db99628a871577481bd3'; 
+    
+     console.log("ExecutedaccountSid: " + accountSid);
+     console.log("ExecutedauthToken: " + authToken);
+
     const client = require('twilio')(accountSid, authToken); 
- 
-client.messages 
+    client.messages 
       .create({ 
          body: 'hiiiii', 
          from: 'whatsapp:+14155238886',       
