@@ -109,22 +109,35 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
     
-     const client = require('twilio')(accountSid, authToken);
-        client.messages
-        .create({body: body, from: '+12562903890', to: to, messagingService: from})
-        .then(message => console.log(message.sid))
-        .done();
+    const accountSid = 'AC0fb76e4aa1281a5da1a11f54e651f8aa'; 
+    const authToken = '[AuthToken]'; 
+    const client = require('twilio')(accountSid, authToken); 
+ 
+client.messages 
+      .create({ 
+         body: 'hiiiii', 
+         from: 'whatsapp:+14155238886',       
+         to: 'whatsapp:+919294641435' 
+       }) 
+      .then(message => console.log(message.sid)) 
+      .done();
     
-   const axios = require('axios');
+//      const client = require('twilio')(accountSid, authToken);
+//         client.messages
+//         .create({body: body, from: '+12562903890', to: to, messagingService: from})
+//         .then(message => console.log(message.sid))
+//         .done();
+    
+//    const axios = require('axios');
 
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
-    .then(response => {
-    console.log(response.data.url);
-    console.log(response.data.explanation);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+//     axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+//     .then(response => {
+//     console.log(response.data.url);
+//     console.log(response.data.explanation);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
 // logs:
 // => {login: "mapbox", id: 600935, node_id: "MDEyOk9yZ2FuaXphdGlvbjYwMDkzNQ==", avatar_url: "https://avatars1.githubusercontent.com/u/600935?v=4", gravatar_id: "", …}
 // => 200
