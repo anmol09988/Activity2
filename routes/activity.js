@@ -109,15 +109,15 @@ exports.execute = function (req, res) {
     console.log("Executedfrom: " + from);
     console.log("Executedbody: " + body);
 
-    const client = require('twilio')(accountSid, authToken); 
-    client.messages 
-      .create({ 
-         body: body, 
-         from: 'whatsapp:+14155238886',       
-         to: 'whatsapp:'+ to
-       }) 
-      .then(message => console.log(message.sid)) 
-      .done();
+//     const client = require('twilio')(accountSid, authToken); 
+//     client.messages 
+//       .create({ 
+//          body: body, 
+//          from: 'whatsapp:+14155238886',       
+//          to: 'whatsapp:'+ to
+//        }) 
+//       .then(message => console.log(message.sid)) 
+//       .done();
     
 //      const client = require('twilio')(accountSid, authToken);
 //         client.messages
